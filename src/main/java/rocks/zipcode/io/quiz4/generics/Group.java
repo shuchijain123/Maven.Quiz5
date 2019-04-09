@@ -1,37 +1,82 @@
 package rocks.zipcode.io.quiz4.generics;
 
-import java.util.Iterator;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 /**
  * @author leon on 18/12/2018.
  */
-public class Group<_> {
+public class Group<T> implements GroupInterface<T>{
+
+    List<T> myList = new ArrayList<>();
+
+
     public Group() {
-        throw new UnsupportedOperationException("Method not yet implemented");
+
+        this.myList = myList;
+
+        //throw new UnsupportedOperationException("Method not yet implemented");
     }
+
+
 
     public Integer count() {
-        return null;
+
+
+        return myList.size();
     }
 
-    public void insert(_ value) {
+    public void insert(T value) {
+
+        myList.add(value);
     }
 
-    public Boolean has(_ value) {
-        return null;
+    public Boolean has(T value) {
+
+
+        return myList.contains(value);
     }
 
-    public _ fetch(int indexOfValue) {
-        return null;
+    public T fetch(int indexOfValue)
+
+    {
+        return myList.get(indexOfValue);
     }
 
-    public void delete(_ value) {
+    public void delete(T value) {
+
+        myList.remove(value);
     }
 
     public void clear() {
+        myList.clear();
     }
 
-    public Iterator<_> iterator() {
+    public Iterator<T> iterator() {
+
+
+        return myList.iterator();
+
+
+    }
+
+    @Override
+    public Spliterator<T> spliterator() {
         return null;
     }
+
+    @Override
+    public void forEach(Consumer action) {
+
+    }
+
+
+    @Override
+    public String toString() {
+
+
+       return  myList.toString();
+    }
+
 }

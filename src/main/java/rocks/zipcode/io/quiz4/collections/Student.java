@@ -4,17 +4,48 @@ package rocks.zipcode.io.quiz4.collections;
  * @author leon on 11/12/2018.
  */
 public class Student {
-    public Student() {
-        this(null);
+
+
+    static final Student INSTANCE= new Student();
+
+    private double totalStudyTime=0.0;
+
+
+    public Student(Integer  id) {
+       this.id=id;
     }
 
-    public Student(Integer id) {
+
+
+    Integer id =1;
+    public Student() {
+
+     this.id=id;
+
+
+        //this(null);
     }
+
+
 
     public void learn(Double amountOfHours) {
-    }
 
-    public Double getTotalStudyTime() {
-        return null;
+
+
+            totalStudyTime= totalStudyTime+amountOfHours;
+
+
+        }
+
+
+
+
+
+
+
+    public Double getTotalStudyTime()
+
+    {
+        return totalStudyTime;
     }
 }
